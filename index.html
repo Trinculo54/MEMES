@@ -13,12 +13,19 @@
   text-align: center;
   font-size: 30px;
   </style>
-  </head><body> <video width="1120" height="630" controls autoplay>
+  </head><body> <video width="1120" height="630" controls>
   <source src="Never Gonna Hit Those Notes.mp4" type="video/mp4">
 Your browser does not support the video tag.
 </video> 
   <script>
-    document.getElementById('vid').play();
+    function startVideoIfNotStarted () {
+    $(".id_of_video_tag").ready(function () {
+        window.setTimeout(function(){
+            videojs("id_of_video_tag").play()
+        }, 1000);
+    });
+}
+$(startVideoIfNotStarted);
 </script>
 <div class="footer">
   You Have been rick rolled &gt;:)
